@@ -16,6 +16,11 @@ public class PowerLamp : MonoBehaviour
     #region PublicVariables
 
     public Light spotLight;
+    
+    public Renderer bulb;
+
+    public Material on;
+    public Material off;
 
     #endregion
 
@@ -43,11 +48,13 @@ public class PowerLamp : MonoBehaviour
                     {
                         _isLampPowered = true;
                         spotLight.enabled = true;
+                        bulb.material = on;
                     }
                     else
                     {
                         _isLampPowered = false;
                         spotLight.enabled = false;
+                        bulb.material = off;
                     }
                 }
             }
