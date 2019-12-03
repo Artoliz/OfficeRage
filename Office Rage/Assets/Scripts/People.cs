@@ -14,6 +14,8 @@ public class People : MonoBehaviour
 
     private float _angularSpeed = 2;
 
+    private Transform _player = null;
+
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
@@ -22,23 +24,37 @@ public class People : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (_player != null)
         {
-            RaycastHit hit;
-
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 500))
+            _agent.SetDestination(_player.position);
+            if (!_agent.isStopped && Vector3.Distance(transform.position, _player.position) < 1.5f)
             {
-                _lastPosition = hit.point;
-                _agent.destination = hit.point;
-                _animator.SetBool(_isWalking, true);
+                _agent.isStopped = true;
+                _animator.SetBool(_isWalking, false);
+                _animator.SetBool(_isPunching, true);
             }
+            if (_agent.isStopped && Vector3.Distance(transform.position, _player.position) >= 1.5f)
+            {
+                _agent.isStopped = false;
+                _animator.SetBool(_isWalking, true);
+                _animator.SetBool(_isPunching, false);
+            }
+            transform.LookAt(new Vector3(_player.position.x, 0, _player.position.z));
         }
-        if (!_agent.isStopped && Vector3.Distance(transform.position, _lastPosition) < 0.1)
-        {
-            _agent.isStopped = true;
-            _animator.SetBool(_isWalking, false);
-        }
-        else if (!_agent.isStopped)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(_lastPosition - transform.position), _angularSpeed * Time.deltaTime);
+    }
+
+    public void SetTarget(Transform player)
+    {
+        _agent.isStopped = false;
+        _player = player;
+        _animator.SetBool(_isWalking, true);
+    }
+
+    public void RemoveTarget()
+    {
+        _agent.isStopped = true;
+        _player = null;
+        _animator.SetBool(_isWalking, false);
+        _animator.SetBool(_isPunching, false);
     }
 }
