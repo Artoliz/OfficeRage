@@ -73,7 +73,7 @@ public class People : MonoBehaviour
         _hp -= 1;
         if (_hp == 0) {
             // Set animation die ?
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // To be removed
             _agent.isStopped = true;
             _isDead = true;
         }
