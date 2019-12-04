@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 
-public class PowerLamp : MonoBehaviour
+public class DisplayMenu : MonoBehaviour
 {
     #region PrivateVariables
 
     private Camera _camera;
     private bool _isCameraNotNull;
-
-    private bool _isLampPowered = true;
 
     private MeshCollider _meshCollider;
 
@@ -15,12 +13,12 @@ public class PowerLamp : MonoBehaviour
 
     #region PublicVariables
 
-    public Light spotLight;
-    
-    public Renderer bulb;
 
-    public Material on;
-    public Material off;
+    public bool isMenuDisplayed;
+    
+    public static DisplayMenu Instance;
+    
+    public SpriteRenderer menu;
 
     #endregion
 
@@ -28,6 +26,8 @@ public class PowerLamp : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+        
         _camera = Camera.main;
         _isCameraNotNull = _camera != null;
 
@@ -36,7 +36,7 @@ public class PowerLamp : MonoBehaviour
 
     private void Update()
     {
-        if (_isCameraNotNull)
+        if (_isCameraNotNull && PowerComputer.Instance.computerIsOn)
         {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
 
@@ -44,20 +44,23 @@ public class PowerLamp : MonoBehaviour
             {
                 if (hit.collider == _meshCollider)
                 {
-                    if (!_isLampPowered)
+                    if (!isMenuDisplayed)
                     {
-                        _isLampPowered = true;
-                        spotLight.enabled = true;
-                        bulb.material = on;
+                        isMenuDisplayed = true;
+                        menu.enabled = true;
                     }
                     else
                     {
-                        _isLampPowered = false;
-                        spotLight.enabled = false;
-                        bulb.material = off;
+                        isMenuDisplayed = false;
+                        menu.enabled = false;
                     }
                 }
             }
+        }
+        else
+        {
+            isMenuDisplayed = false;
+            menu.enabled = false;
         }
     }
 

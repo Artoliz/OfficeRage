@@ -1,32 +1,35 @@
 ﻿using UnityEngine;
 
-public class DisplayWallPaper : MonoBehaviour
+public class PowerComputer : MonoBehaviour
 {
     #region PrivateVariables
 
     private Camera _camera;
     private bool _isCameraNotNull;
 
-    private bool _isWallPaperDisplayed;
-
-    private SphereCollider _sphereCollider;
+    private MeshCollider _meshCollider;
 
     #endregion
 
     #region PublicVariables
+    
+    [HideInInspector]
+    public bool computerIsOn;
 
-    public SpriteRenderer wallpaper;
-
+    public static PowerComputer Instance;
+    
     #endregion
 
     #region MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+        
         _camera = Camera.main;
         _isCameraNotNull = _camera != null;
 
-        _sphereCollider = gameObject.transform.GetComponent<SphereCollider>();
+        _meshCollider = gameObject.transform.GetComponent<MeshCollider>();
     }
 
     private void Update()
@@ -37,17 +40,17 @@ public class DisplayWallPaper : MonoBehaviour
 
             if (Physics.Raycast(ray, out var hit) && Input.GetMouseButtonDown(0))
             {
-                if (hit.collider == _sphereCollider)
+                if (hit.collider == _meshCollider)
                 {
-                    if (!_isWallPaperDisplayed)
+                    if (!computerIsOn)
                     {
-                        _isWallPaperDisplayed = true;
-                        wallpaper.enabled = true;
+                        computerIsOn = true;
+                        DisplayMenu.Instance.isMenuDisplayed = true;
+                        DisplayMenu.Instance.menu.enabled = true;
                     }
                     else
                     {
-                        _isWallPaperDisplayed = false;
-                        wallpaper.enabled = false;
+                        computerIsOn = false;
                     }
                 }
             }
