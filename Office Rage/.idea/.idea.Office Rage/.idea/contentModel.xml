@@ -38,6 +38,9 @@
             <e p="PowerComputer.cs" t="Include" />
             <e p="PowerLamp.cs" t="Include" />
           </e>
+          <e p="PauseMenu" t="Include">
+            <e p="PauseMenu.cs" t="Include" />
+          </e>
           <e p="People" t="Include">
             <e p="FieldOfView.cs" t="Include" />
             <e p="People.cs" t="Include" />
