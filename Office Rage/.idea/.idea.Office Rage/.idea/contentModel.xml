@@ -34,6 +34,7 @@
           <e p="Introduction" t="Include">
             <e p="DisplayMenu.cs" t="Include" />
             <e p="HandleKeyboard.cs" t="Include" />
+            <e p="LaunchSceneAfterVideo.cs" t="Include" />
             <e p="MoveHead.cs" t="Include" />
             <e p="PowerComputer.cs" t="Include" />
             <e p="PowerLamp.cs" t="Include" />

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HandleKeyboard : MonoBehaviour
 {
@@ -74,7 +73,7 @@ public class HandleKeyboard : MonoBehaviour
     {
         PowerComputer.Instance.computerIsOn = false;
         DisplayMenu.Instance.isMenuDisplayed = false;
-        LoadSceneManager.Instance.LoadLevel("Game");
+        LoadSceneManager.Instance.LoadLevel("IntroductionVideo");
     }
 
     private void LaunchOther()

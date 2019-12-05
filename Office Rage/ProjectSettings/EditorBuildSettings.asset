@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Introduction.unity
     guid: b48dd5750a77ac14db6a6c4d5b2cd856
   - enabled: 1
+    path: Assets/Scenes/IntroductionVideo.unity
+    guid: 45b5b366f093308468a75d736f331abe
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: cf88202724ae766488716a9158fc68e3
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: f7d8cd6f012d9674980f0126502af2af
   m_configObjects: {}
