@@ -74,7 +74,7 @@ public class HandleKeyboard : MonoBehaviour
     {
         PowerComputer.Instance.computerIsOn = false;
         DisplayMenu.Instance.isMenuDisplayed = false;
-        SceneManager.LoadScene("Game");
+        LoadSceneManager.Instance.LoadLevel("Game");
     }
 
     private void LaunchOther()
