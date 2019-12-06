@@ -31,6 +31,10 @@
           <e p="About.txt" t="Include" />
         </e>
         <e p="Scripts" t="Include">
+          <e p="EndScene" t="Include">
+            <e p="TextWriter.cs" t="Include" />
+            <e p="UiAssistant.cs" t="Include" />
+          </e>
           <e p="Introduction" t="Include">
             <e p="DisplayMenu.cs" t="Include" />
             <e p="HandleKeyboard.cs" t="Include" />
@@ -47,7 +51,9 @@
             <e p="People.cs" t="Include" />
             <e p="Punch.cs" t="Include" />
           </e>
-          <e p="Player.cs" t="Include" />
+          <e p="Player" t="Include">
+            <e p="Player.cs" t="Include" />
+          </e>
           <e p="Utils" t="Include">
             <e p="LoadSceneManager.cs" t="Include" />
           </e>
