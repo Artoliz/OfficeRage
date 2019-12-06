@@ -131,6 +131,11 @@ public class TextWriter : MonoBehaviour
             return _characterIndex < _textToWrite.Length;
         }
 
+        public bool IsFinished()
+        {
+            return _characterIndex == _textToWrite.Length;
+        }
+
         public void WriteAllAndDestroy()
         {
             _uiText.text = _textToWrite;
