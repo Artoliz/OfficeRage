@@ -8885,6 +8885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116448529}
+  - component: {fileID: 1116448530}
   m_Layer: 0
   m_Name: Toys
   m_TagString: Untagged
@@ -8907,11 +8908,25 @@ Transform:
   - {fileID: 4808575889717260}
   - {fileID: 4105885684678415}
   - {fileID: 4235038736113869}
-  - {fileID: 4494775412109910}
   - {fileID: 4106303238081635}
+  - {fileID: 4494775412109910}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1116448530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116448528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804c8521e34d183408bf17810425cebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toysCollected: 0
+  penguin: {fileID: 1511746412096876}
 --- !u!43 &1136477234
 Mesh:
   m_ObjectHideFlags: 0
@@ -22393,6 +22408,8 @@ GameObject:
   - component: {fileID: 4106303238081635}
   - component: {fileID: 33224989887251355}
   - component: {fileID: 23134570129213595}
+  - component: {fileID: 1189123549336288}
+  - component: {fileID: 1189123549336289}
   m_Layer: 0
   m_Name: SHEEP
   m_TagString: Untagged
@@ -22400,6 +22417,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1189123549336288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189123549336287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7dee8eb9696fa458689faa98c78aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1189123549336289
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189123549336287}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 43c459dde653d714e83a12acc004589e, type: 3}
 --- !u!1 &1258646161969200
 GameObject:
   m_ObjectHideFlags: 0
@@ -22411,6 +22454,8 @@ GameObject:
   - component: {fileID: 4410843045056758}
   - component: {fileID: 33258934660001360}
   - component: {fileID: 23477471449638376}
+  - component: {fileID: 1258646161969201}
+  - component: {fileID: 1258646161969202}
   m_Layer: 0
   m_Name: BEAR
   m_TagString: Untagged
@@ -22418,6 +22463,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1258646161969201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258646161969200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7dee8eb9696fa458689faa98c78aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1258646161969202
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258646161969200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 7b41ce0cf4881e942b22b126c24cac74, type: 3}
 --- !u!1 &1268163889885229
 GameObject:
   m_ObjectHideFlags: 0
@@ -22429,6 +22500,8 @@ GameObject:
   - component: {fileID: 4105885684678415}
   - component: {fileID: 33964201256639921}
   - component: {fileID: 23517666563761819}
+  - component: {fileID: 1268163889885230}
+  - component: {fileID: 1268163889885231}
   m_Layer: 0
   m_Name: PIG
   m_TagString: Untagged
@@ -22436,6 +22509,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1268163889885230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268163889885229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7dee8eb9696fa458689faa98c78aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1268163889885231
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268163889885229}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 278210d3246b9ce4bb1eabb1072ef246, type: 3}
 --- !u!1 &1502819247515008
 GameObject:
   m_ObjectHideFlags: 0
@@ -22447,6 +22546,8 @@ GameObject:
   - component: {fileID: 4808575889717260}
   - component: {fileID: 33054886144568828}
   - component: {fileID: 23119816345261894}
+  - component: {fileID: 1502819247515009}
+  - component: {fileID: 1502819247515010}
   m_Layer: 0
   m_Name: MONKEY
   m_TagString: Untagged
@@ -22454,6 +22555,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1502819247515009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502819247515008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7dee8eb9696fa458689faa98c78aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1502819247515010
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502819247515008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 1d2364a646d7c894b95d83a0d56e80d5, type: 3}
 --- !u!1 &1511746412096876
 GameObject:
   m_ObjectHideFlags: 0
@@ -22503,6 +22630,8 @@ GameObject:
   - component: {fileID: 4235038736113869}
   - component: {fileID: 33628465769582121}
   - component: {fileID: 23421161433009889}
+  - component: {fileID: 1632189987901636}
+  - component: {fileID: 1632189987901637}
   m_Layer: 0
   m_Name: RABBIT
   m_TagString: Untagged
@@ -22510,6 +22639,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1632189987901636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632189987901635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7dee8eb9696fa458689faa98c78aaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!64 &1632189987901637
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632189987901635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 7a7eaef2c03fe2a4497f4122ae85ee43, type: 3}
 --- !u!1 &1844782038896824
 GameObject:
   m_ObjectHideFlags: 0
@@ -22556,7 +22711,7 @@ Transform:
   m_LocalScale: {x: 0.10000002, y: 0.1, z: 0.10000002}
   m_Children: []
   m_Father: {fileID: 1116448529}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 100, z: 0}
 --- !u!4 &4235038736113869
 Transform:
@@ -22624,10 +22779,10 @@ Transform:
   m_GameObject: {fileID: 1511746412096876}
   m_LocalRotation: {x: 0, y: 0.9848078, z: -0, w: -0.17364809}
   m_LocalPosition: {x: 1, y: 0.7, z: 0.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1116448529}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 200, z: 0}
 --- !u!4 &4633411882880166
 Transform:

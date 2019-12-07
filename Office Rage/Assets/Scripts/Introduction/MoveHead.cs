@@ -47,7 +47,7 @@ public class MoveHead : MonoBehaviour
 
     #region PublicMethods
 
-        public void LookUp()
+    public void LookUp()
     {
         _lookDirectionHorizontal = LookDirectionHorizontal.Center;
 
