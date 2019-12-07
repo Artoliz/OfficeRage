@@ -8,7 +8,7 @@ public class PowerComputer : MonoBehaviour
     private bool _isCameraNotNull;
 
     private MeshCollider _meshCollider;
-
+    
     #endregion
 
     #region PublicVariables
@@ -20,6 +20,9 @@ public class PowerComputer : MonoBehaviour
     
     public static PowerComputer Instance;
     
+    public AudioSource windowsStartSound;
+    public AudioSource windowsStopSound;
+
     #endregion
 
     #region MonoBehaviour
@@ -30,9 +33,9 @@ public class PowerComputer : MonoBehaviour
         
         _camera = Camera.main;
         _isCameraNotNull = _camera != null;
+        wallpaperNoPower.SetActive(true);
 
         _meshCollider = gameObject.transform.GetComponent<MeshCollider>();
-        wallpaperNoPower.SetActive(true);
     }
 
     private void Update()
@@ -47,6 +50,7 @@ public class PowerComputer : MonoBehaviour
                 {
                     if (!computerIsOn)
                     {
+                        windowsStartSound.Play();
                         computerIsOn = true;
                         DisplayMenu.Instance.isMenuDisplayed = true;
                         DisplayMenu.Instance.windowsDesktop.SetActive(true);
@@ -54,6 +58,7 @@ public class PowerComputer : MonoBehaviour
                     }
                     else
                     {
+                        windowsStopSound.Play();
                         computerIsOn = false;
                         wallpaperNoPower.SetActive(true);
                     }

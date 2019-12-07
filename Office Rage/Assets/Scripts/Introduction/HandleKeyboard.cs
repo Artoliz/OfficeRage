@@ -16,6 +16,8 @@ public class HandleKeyboard : MonoBehaviour
     public MeshCollider keyGame;
     public MeshCollider keyOther;
     public MeshCollider keyQuit;
+    
+    public AudioSource keyCapSound;
 
     #endregion
 
@@ -71,6 +73,7 @@ public class HandleKeyboard : MonoBehaviour
 
     private void LaunchGame()
     {
+        keyCapSound.Play();
         PowerComputer.Instance.computerIsOn = false;
         DisplayMenu.Instance.isMenuDisplayed = false;
         LoadSceneManager.Instance.LoadLevel("IntroductionVideo");
@@ -78,11 +81,13 @@ public class HandleKeyboard : MonoBehaviour
 
     private void LaunchOther()
     {
+        keyCapSound.Play();
         //Do Something
     }
 
     private void QuitGame()
     {
+        keyCapSound.Play();
         PowerComputer.Instance.computerIsOn = false;
         DisplayMenu.Instance.isMenuDisplayed = false;
         Application.Quit();
