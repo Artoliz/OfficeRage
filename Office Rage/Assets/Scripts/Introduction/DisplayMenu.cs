@@ -13,12 +13,13 @@ public class DisplayMenu : MonoBehaviour
 
     #region PublicVariables
 
-
+    [HideInInspector]
     public bool isMenuDisplayed;
     
     public static DisplayMenu Instance;
     
-    public SpriteRenderer menu;
+    public GameObject windowsDesktop;
+    public GameObject screenOff;
 
     #endregion
 
@@ -32,6 +33,8 @@ public class DisplayMenu : MonoBehaviour
         _isCameraNotNull = _camera != null;
 
         _meshCollider = gameObject.transform.GetComponent<MeshCollider>();
+        windowsDesktop.SetActive(false);
+        screenOff.SetActive(false);
     }
 
     private void Update()
@@ -47,12 +50,14 @@ public class DisplayMenu : MonoBehaviour
                     if (!isMenuDisplayed)
                     {
                         isMenuDisplayed = true;
-                        menu.enabled = true;
+                        windowsDesktop.SetActive(true);
+                        screenOff.SetActive(false);
                     }
                     else
                     {
                         isMenuDisplayed = false;
-                        menu.enabled = false;
+                        windowsDesktop.SetActive(false);
+                        screenOff.SetActive(true);
                     }
                 }
             }
@@ -60,7 +65,8 @@ public class DisplayMenu : MonoBehaviour
         else
         {
             isMenuDisplayed = false;
-            menu.enabled = false;
+            windowsDesktop.SetActive(false);
+            screenOff.SetActive(false);
         }
     }
 

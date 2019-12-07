@@ -16,6 +16,8 @@ public class PowerComputer : MonoBehaviour
     [HideInInspector]
     public bool computerIsOn;
 
+    public GameObject wallpaperNoPower;
+    
     public static PowerComputer Instance;
     
     #endregion
@@ -30,6 +32,7 @@ public class PowerComputer : MonoBehaviour
         _isCameraNotNull = _camera != null;
 
         _meshCollider = gameObject.transform.GetComponent<MeshCollider>();
+        wallpaperNoPower.SetActive(true);
     }
 
     private void Update()
@@ -46,11 +49,13 @@ public class PowerComputer : MonoBehaviour
                     {
                         computerIsOn = true;
                         DisplayMenu.Instance.isMenuDisplayed = true;
-                        DisplayMenu.Instance.menu.enabled = true;
+                        DisplayMenu.Instance.windowsDesktop.SetActive(true);
+                        wallpaperNoPower.SetActive(false);
                     }
                     else
                     {
                         computerIsOn = false;
+                        wallpaperNoPower.SetActive(true);
                     }
                 }
             }
