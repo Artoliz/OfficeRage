@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CellPhone : MonoBehaviour
@@ -13,11 +13,14 @@ public class CellPhone : MonoBehaviour
 
     private bool _isVibrating;
 
+    private List<AudioSource> _evilSoundList;
+
     #endregion
 
     #region PublicVariables
 
     public AudioSource vibrationSound;
+    public GameObject evilSound;
 
     #endregion
 
@@ -29,6 +32,7 @@ public class CellPhone : MonoBehaviour
         _isCameraNotNull = _camera != null;
 
         _boxCollider = gameObject.GetComponent<BoxCollider>();
+        _evilSoundList = new List<AudioSource>(evilSound.GetComponents<AudioSource>());
     }
 
     private void Start()
@@ -50,6 +54,8 @@ public class CellPhone : MonoBehaviour
                     {
                         _isVibrating = false;
                         vibrationSound.Stop();
+                        var index = Random.Range(0, _evilSoundList.Count);
+                        _evilSoundList[index].Play();
                     }
                 }
             }

@@ -46,7 +46,7 @@ public class FixPhone : MonoBehaviour
                 {
                     _isDialing = true;
                     phoneDialingSound.Play();
-                    StartCoroutine(PlayDrinkSound());
+                    StartCoroutine(PlayBusySignalSound());
                 }
             }
         }
@@ -56,10 +56,16 @@ public class FixPhone : MonoBehaviour
 
     #region PrivateMethods
 
-    private IEnumerator PlayDrinkSound()
+    private IEnumerator PlayBusySignalSound()
     {
         yield return new WaitForSeconds(phoneDialingSound.clip.length);
         phoneBusySignal.Play();
+        StartCoroutine(ResettingPhonesSounds());
+    }
+
+    private IEnumerator ResettingPhonesSounds()
+    {
+        yield return new WaitForSeconds(phoneBusySignal.clip.length);
         _isDialing = false;
     }
 
