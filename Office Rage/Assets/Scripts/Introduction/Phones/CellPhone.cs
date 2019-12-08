@@ -11,9 +11,14 @@ public class CellPhone : MonoBehaviour
 
     private BoxCollider _boxCollider;
 
+    private int _index;
+    
     private bool _isVibrating;
 
     private List<AudioSource> _evilSoundList;
+    
+    private Animator _cellPhoneAnimator;
+    private static readonly int AnswerCellPhone = Animator.StringToHash("AnswerCellPhone");
 
     #endregion
 
@@ -33,6 +38,7 @@ public class CellPhone : MonoBehaviour
 
         _boxCollider = gameObject.GetComponent<BoxCollider>();
         _evilSoundList = new List<AudioSource>(evilSound.GetComponents<AudioSource>());
+        _cellPhoneAnimator = gameObject.GetComponent<Animator>();
     }
 
     private void Start()
@@ -54,8 +60,8 @@ public class CellPhone : MonoBehaviour
                     {
                         _isVibrating = false;
                         vibrationSound.Stop();
-                        var index = Random.Range(0, _evilSoundList.Count);
-                        _evilSoundList[index].Play();
+                        _cellPhoneAnimator.SetBool(AnswerCellPhone, true);
+                        StartCoroutine(PlayAnswerSound());
                     }
                 }
             }
@@ -68,9 +74,23 @@ public class CellPhone : MonoBehaviour
 
     private IEnumerator PlayVibratingSound()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(2);
         _isVibrating = true;
         vibrationSound.Play();
+    }
+
+    private IEnumerator PlayAnswerSound()
+    {
+        yield return new WaitForSeconds(1.5f);
+        _index = Random.Range(0, _evilSoundList.Count);
+        _evilSoundList[_index].Play();
+        StartCoroutine(ResetCellPhonePosition());
+    }
+    
+    private IEnumerator ResetCellPhonePosition()
+    {
+        yield return new WaitForSeconds(_evilSoundList[_index].clip.length);
+        _cellPhoneAnimator.SetBool(AnswerCellPhone, false);
     }
 
     #endregion

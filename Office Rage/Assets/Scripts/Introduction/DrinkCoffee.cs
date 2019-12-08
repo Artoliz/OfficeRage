@@ -10,10 +10,9 @@ public class DrinkCoffee : MonoBehaviour
 
     private MeshCollider _meshCollider;
 
-    private Animator _coffeeAnimator;
-
     private bool _isDrinking;
     
+    private Animator _coffeeAnimator;
     private static readonly int Drink = Animator.StringToHash("Drink");
 
     #endregion
