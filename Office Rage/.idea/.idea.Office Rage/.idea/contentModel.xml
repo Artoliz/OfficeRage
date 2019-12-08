@@ -37,6 +37,7 @@
           </e>
           <e p="Introduction" t="Include">
             <e p="DisplayMenu.cs" t="Include" />
+            <e p="DrinkCoffee.cs" t="Include" />
             <e p="HandleKeyboard.cs" t="Include" />
             <e p="HandleToys.cs" t="Include" />
             <e p="LaunchSceneAfterVideo.cs" t="Include" />
