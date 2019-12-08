@@ -19,6 +19,12 @@ public class TakeToyOnClick : MonoBehaviour
 
     #endregion
 
+    #region PublicVariables
+
+    public AudioSource toySound;
+
+    #endregion
+
     #region MonoBehaviour
 
     private void Awake()
@@ -41,6 +47,7 @@ public class TakeToyOnClick : MonoBehaviour
                 {
                     _isHit = true;
                     HandleToys.Instance.toysCollected++;
+                    toySound.Play();
                     _coroutine = StartCoroutine(ScaleDown());
                 }
             }
