@@ -39,12 +39,18 @@
             <e p="DisplayMenu.cs" t="Include" />
             <e p="DrinkCoffee.cs" t="Include" />
             <e p="HandleKeyboard.cs" t="Include" />
-            <e p="HandleToys.cs" t="Include" />
             <e p="LaunchSceneAfterVideo.cs" t="Include" />
             <e p="MoveHead.cs" t="Include" />
+            <e p="Phones" t="Include">
+              <e p="CellPhone.cs" t="Include" />
+              <e p="FixPhone.cs" t="Include" />
+            </e>
             <e p="PowerComputer.cs" t="Include" />
             <e p="PowerLamp.cs" t="Include" />
-            <e p="TakeToyOnClick.cs" t="Include" />
+            <e p="Toys" t="Include">
+              <e p="HandleToys.cs" t="Include" />
+              <e p="TakeToyOnClick.cs" t="Include" />
+            </e>
           </e>
           <e p="PauseMenu" t="Include">
             <e p="PauseMenu.cs" t="Include" />
