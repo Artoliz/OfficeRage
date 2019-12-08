@@ -24,6 +24,8 @@ public class HandleToys : MonoBehaviour
 
     public static HandleToys Instance;
 
+    public AudioSource penguinInflation;
+    
     #endregion
 
     #region MonoBehaviour
@@ -42,6 +44,7 @@ public class HandleToys : MonoBehaviour
         {
             _alreadyGrowing = true;
             penguin.SetActive(true);
+            penguinInflation.Play();
             _coroutine = StartCoroutine(ScaleUp());
         }
         else if (_isMax)
