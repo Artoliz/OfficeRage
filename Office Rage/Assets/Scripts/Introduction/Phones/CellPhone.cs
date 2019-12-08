@@ -74,7 +74,7 @@ public class CellPhone : MonoBehaviour
 
     private IEnumerator PlayVibratingSound()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(30);
         _isVibrating = true;
         vibrationSound.Play();
     }
