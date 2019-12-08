@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Video;
 
 public class HandleKeyboard : MonoBehaviour
 {
@@ -9,15 +10,19 @@ public class HandleKeyboard : MonoBehaviour
 
     private int _keyPressed;
 
+    private bool _tvIsRunning;
+
     #endregion
 
     #region PublicVariables
 
     public MeshCollider keyGame;
-    public MeshCollider keyOther;
+    public MeshCollider keyTv;
     public MeshCollider keyQuit;
     
     public AudioSource keyCapSound;
+
+    public VideoPlayer tvVideo;
 
     #endregion
 
@@ -39,8 +44,8 @@ public class HandleKeyboard : MonoBehaviour
             {
                 if (hit.collider == keyGame)
                     LaunchGame();
-                else if (hit.collider == keyOther)
-                    LaunchOther();
+                else if (hit.collider == keyTv)
+                    LaunchTv();
                 else if (hit.collider == keyQuit)
                     QuitGame();
             }
@@ -49,7 +54,7 @@ public class HandleKeyboard : MonoBehaviour
                 if (_keyPressed == 1)
                     LaunchGame();
                 else if (_keyPressed == 2)
-                    LaunchOther();
+                    LaunchTv();
                 else if (_keyPressed == 3)
                     QuitGame();
             }
@@ -79,10 +84,19 @@ public class HandleKeyboard : MonoBehaviour
         LoadSceneManager.Instance.LoadLevel("IntroductionVideo");
     }
 
-    private void LaunchOther()
+    private void LaunchTv()
     {
         keyCapSound.Play();
-        //Do Something
+        if (_tvIsRunning)
+        {
+            _tvIsRunning = false;
+            tvVideo.Stop();
+        }
+        else
+        {
+            _tvIsRunning = true;
+            tvVideo.Play();
+        }
     }
 
     private void QuitGame()
