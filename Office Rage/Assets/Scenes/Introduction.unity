@@ -2218,6 +2218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 438371866}
+  - component: {fileID: 438371867}
   m_Layer: 0
   m_Name: ToysSystem
   m_TagString: Untagged
@@ -2242,6 +2243,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &438371867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438371865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804c8521e34d183408bf17810425cebf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toysCollected: 0
+  penguin: {fileID: 1511746412096876}
+  penguinInflation: {fileID: 1625783076}
 --- !u!1 &476874248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5287,7 +5303,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116448529}
-  - component: {fileID: 1116448530}
   m_Layer: 0
   m_Name: Toys
   m_TagString: Untagged
@@ -5315,20 +5330,6 @@ Transform:
   m_Father: {fileID: 438371866}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1116448530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116448528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804c8521e34d183408bf17810425cebf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toysCollected: 0
-  penguin: {fileID: 1511746412096876}
 --- !u!43 &1137183775
 Mesh:
   m_ObjectHideFlags: 0
