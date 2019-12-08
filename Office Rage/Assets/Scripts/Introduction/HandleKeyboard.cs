@@ -91,6 +91,7 @@ public class HandleKeyboard : MonoBehaviour
         {
             _tvIsRunning = false;
             tvVideo.Stop();
+            tvVideo.targetTexture.Release();
         }
         else
         {
