@@ -6,6 +6,8 @@ public class People : MonoBehaviour
 {
     public Slider Health;
 
+    public GameObject Key;
+
     private const string _isWalking = "isWalking";
     private const string _isPunching = "isPunching";
 
@@ -74,7 +76,13 @@ public class People : MonoBehaviour
     {
         _hp -= 1;
         Health.value = _hp;
-        if (_hp == 0) {
+        if (_hp <= 0) {
+            int rd = Random.Range(0, 10);
+            if (rd % 2 == 0)
+                Instantiate(Key, transform.position, new Quaternion(0, 0, 0, 0));
+
+            //if (Josh) WinGame
+
             // Set animation die ?
             Destroy(this.gameObject); // To be removed
             //_agent.isStopped = true;

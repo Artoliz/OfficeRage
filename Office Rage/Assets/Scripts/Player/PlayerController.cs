@@ -13,7 +13,14 @@ public class PlayerController : MonoBehaviour
     //public int stamina = 100;
 
     private Player player;
-    
+
+    public static PlayerController Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -69,6 +76,13 @@ public class PlayerController : MonoBehaviour
         }
         if (mouseRotate)
             this.transform.Rotate(Vector3.up * (Input.GetAxis("Mouse X")) * Mathf.Sign(v), Space.World);
+    }
+
+    public bool IsPunching()
+    {
+        if (anim.GetBool("WheelButtonPowerKick") || anim.GetBool("WheelButtonTiredKick") || anim.GetBool("RightClick") || anim.GetBool("LeftClick"))
+            return true;
+        return false;
     }
 }
 
