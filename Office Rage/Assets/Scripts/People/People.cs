@@ -1,10 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class People : MonoBehaviour
 {
+    public Slider Health;
+
     private const string _isWalking = "isWalking";
     private const string _isPunching = "isPunching";
 
@@ -23,6 +24,7 @@ public class People : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _animator = GetComponent<Animator>();
+        Health.value = _hp;
     }
 
     void Update()
@@ -71,11 +73,17 @@ public class People : MonoBehaviour
     public void RemoveOneHP()
     {
         _hp -= 1;
+        Health.value = _hp;
         if (_hp == 0) {
             // Set animation die ?
             Destroy(this.gameObject); // To be removed
-            _agent.isStopped = true;
-            _isDead = true;
+            //_agent.isStopped = true;
+            //_isDead = true;
         }
+    }
+
+    public int GetHP()
+    {
+        return _hp;
     }
 }

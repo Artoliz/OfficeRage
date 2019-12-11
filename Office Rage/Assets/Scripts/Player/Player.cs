@@ -1,18 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float movementSpeed = 10;
-    public float turningSpeed = 60;
+    private float _stamina = 100;
+    private int _life = 100;
 
-    void Update()
+    public Slider Stamina;
+    public Slider Health;
+
+    private void Awake()
     {
-        float horizontal = Input.GetAxis("Horizontal") * turningSpeed * Time.deltaTime;
-        transform.Rotate(0, horizontal, 0);
+        Health.value = _life;
+        Stamina.value = _stamina;
+    }
 
-        float vertical = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-        transform.Translate(0, 0, vertical);
+    private void Update()
+    {
+        if (_stamina < 100)
+        {
+            _stamina += 0.1f;
+            Stamina.value = _stamina;
+        }
+    }
+
+    public void RemoveOnHP()
+    {
+        _life -= 1;
+        Health.value = _life;
+        if (_life <= 0)
+        {
+            // Player supposed to be dead...
+        }
+    }
+
+    public void RemoveStamina(int minus)
+    {
+        _stamina -= minus;
+        Stamina.value = _stamina;
+    }
+
+    public float GetStamina()
+    {
+        return _stamina;
     }
 }

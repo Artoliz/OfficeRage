@@ -9,9 +9,6 @@ public class Punch : MonoBehaviour
         if (GetComponentInParent<People>().IsDead())
             return;
         if (other.CompareTag("Player"))
-        {
-            Debug.Log("Player Punched!");
-            // Remove 1 PV to Player
-        }
+            other.gameObject.GetComponentInParent<Player>().RemoveOnHP();
     }
 }

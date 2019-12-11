@@ -10,14 +10,16 @@ public class PlayerController : MonoBehaviour
     public bool keyboardRotate = false;
     private float Speed = 5;
     public float turningSpeed = 180;
-    public int stamina = 100;
- 
+    //public int stamina = 100;
+
+    private Player player;
     
     void Start()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Confined;
+        player = GetComponent<Player>();
     }
 
     void Update()
@@ -55,19 +57,15 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Mouse2))
         {
-            if (stamina >= 75)
+            if (player.GetStamina() >= 75)
             {
-                stamina = stamina - 75;
+                player.RemoveStamina(75);
                 anim.SetBool("WheelButtonPowerKick", true);
             }
             else
             {
                 anim.SetBool("WheelButtonTiredKick", true);
             }
-        }
-        if (stamina <= 100)
-        {
-            stamina += 1;
         }
         if (mouseRotate)
             this.transform.Rotate(Vector3.up * (Input.GetAxis("Mouse X")) * Mathf.Sign(v), Space.World);
