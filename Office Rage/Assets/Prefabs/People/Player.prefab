@@ -1129,6 +1129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stamina: {fileID: 0}
   Health: {fileID: 0}
+  Key: {fileID: 0}
 --- !u!1 &1196573231623475512
 GameObject:
   m_ObjectHideFlags: 0

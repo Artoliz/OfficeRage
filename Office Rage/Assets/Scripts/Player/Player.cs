@@ -5,16 +5,22 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     private float _stamina = 100;
     private int _life = 100;
+    private int _nbUsbKey = 0;
 
     public Slider Stamina;
     public Slider Health;
+    public Text Key;
 
     private void Awake()
     {
+        Instance = this;
         Health.value = _life;
         Stamina.value = _stamina;
+        Key.text = "0";
     }
 
     private void Update()
@@ -45,5 +51,11 @@ public class Player : MonoBehaviour
     public float GetStamina()
     {
         return _stamina;
+    }
+
+    public void AddUSBKey()
+    {
+        _nbUsbKey += 1;
+        Key.text = _nbUsbKey.ToString();
     }
 }
