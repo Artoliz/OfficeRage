@@ -36,19 +36,33 @@ public class People : MonoBehaviour
         if (_player != null)
         {
             _agent.SetDestination(_player.position);
-            if (!_agent.isStopped && Vector3.Distance(transform.position, _player.position) < 2)
+            if (!_agent.isStopped && Vector3.Distance(transform.position, _player.position) < 1)
             {
                 _agent.isStopped = true;
                 _animator.SetBool(_isWalking, false);
                 _animator.SetBool(_isPunching, true);
             }
-            if (_agent.isStopped && Vector3.Distance(transform.position, _player.position) >= 2)
+            if (_agent.isStopped && Vector3.Distance(transform.position, _player.position) >= 1)
             {
                 _agent.isStopped = false;
                 _animator.SetBool(_isWalking, true);
                 _animator.SetBool(_isPunching, false);
             }
             transform.LookAt(new Vector3(_player.position.x, 0, _player.position.z));
+        }
+    }
+
+    private void ApplyRagdoll()
+    {
+        Ragdoll ragdoll = GetComponent<Ragdoll>();
+
+        ragdoll.ActivateRagdoll();
+
+        foreach (Rigidbody bone in GetComponentsInChildren<Rigidbody>())
+        {
+            if (bone.gameObject.CompareTag("People"))
+                continue;
+            bone.AddForce(new Vector3(0, 0, -10), ForceMode.Impulse);
         }
     }
 
@@ -77,21 +91,26 @@ public class People : MonoBehaviour
         _hp -= 1;
         Health.value = _hp;
         if (_hp <= 0) {
+            _agent.isStopped = true;
+            _isDead = true;
+
+            if (GetComponentInChildren<Canvas>().gameObject != null)
+                Destroy(GetComponentInChildren<Canvas>().gameObject);
+
             if (gameObject.name == "Josh")
             {
                 LoadSceneManager.Instance.LoadLevel("EndScene");
                 return;
             }
             int rd = Random.Range(0, 10);
+
+            Quaternion quat = new Quaternion();
+            quat.eulerAngles = new Vector3(0, -280, 90);
+
             if (rd % 2 == 0)
-                Instantiate(Key, transform.position, new Quaternion(0, 0, 0, 0));
+                Instantiate(Key, new Vector3(transform.position.x, 1, transform.position.z), quat);
 
-            //if (Josh) WinGame
-
-            // Set animation die ?
-            Destroy(this.gameObject); // To be removed
-            //_agent.isStopped = true;
-            //_isDead = true;
+            ApplyRagdoll();
         }
     }
 

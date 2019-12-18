@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - People
+  - Hand
+  - FOV
   layers:
   - Default
   - TransparentFX

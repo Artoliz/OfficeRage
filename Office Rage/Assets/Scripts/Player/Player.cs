@@ -23,6 +23,11 @@ public class Player : MonoBehaviour
         Key.text = "0";
     }
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     private void Update()
     {
         if (_stamina < 100)
@@ -32,14 +37,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void RemoveOnHP()
+    public void RemoveOneHP()
     {
         _life -= 1;
         Health.value = _life;
         if (_life <= 0)
-        {
-            // Player supposed to be dead...
-        }
+            LoadSceneManager.Instance.LoadLevel("EndScene");
     }
 
     public void RemoveStamina(int minus)
@@ -57,5 +60,14 @@ public class Player : MonoBehaviour
     {
         _nbUsbKey += 1;
         Key.text = _nbUsbKey.ToString();
+
+        _life += 30;
+        Health.value = _life;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("People") && !other.GetComponent<People>().IsDead())
+            RemoveOneHP();
     }
 }

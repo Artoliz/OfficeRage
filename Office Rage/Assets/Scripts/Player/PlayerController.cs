@@ -31,6 +31,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0)
+            return;
+
         float v = Input.GetAxis("Horizontal");
 
         anim.SetBool("RightClick", false);
