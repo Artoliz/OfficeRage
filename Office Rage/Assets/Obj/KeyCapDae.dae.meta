@@ -1,41 +1,28 @@
 fileFormatVersion: 2
-guid: 23b2fbd23231f2947ad50d2eb7f3bc2c
+guid: 415302af0a13346408abb3595260b7f4
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Boole_1_Boole_Cube
-    100002: Boole_1_Boole_Cube_1
-    100004: Boole_1_Cube_2
-    100006: Cube1
-    100008: Cube_11
-    100010: //RootNode
-    400000: Boole_1_Boole_Cube
-    400002: Boole_1_Boole_Cube_1
-    400004: Boole_1_Cube_2
-    400006: Cube1
-    400008: Cube_11
-    400010: //RootNode
-    2100000: Boole_1_Boole_CubeMat
-    2100002: Boole_1_Boole_Cube_1Mat
-    2100004: Boole_1_Cube_2Mat
-    2100006: Cube1Mat
-    2100008: Cube_11Mat
-    2300000: Boole_1_Boole_Cube
-    2300002: Boole_1_Boole_Cube_1
-    2300004: Boole_1_Cube_2
-    2300006: Cube1
-    2300008: Cube_11
-    3300000: Boole_1_Boole_Cube
-    3300002: Boole_1_Boole_Cube_1
-    3300004: Boole_1_Cube_2
-    3300006: Cube1
-    3300008: Cube_11
-    4300000: Boole_1_Boole_Cube
-    4300002: Boole_1_Boole_Cube_1
-    4300004: Boole_1_Cube_2
-    4300006: Cube1
-    4300008: Cube_11
-    2186277476908879412: ImportLogs
+    100000: a03f219f-6650-4303-ade8-1f4940bc38d8
+    100002: //RootNode
+    100004: View-Front
+    100006: View-Perspective
+    100008: View-Right
+    100010: View-Top
+    400000: a03f219f-6650-4303-ade8-1f4940bc38d8
+    400002: //RootNode
+    400004: View-Front
+    400006: View-Perspective
+    400008: View-Right
+    400010: View-Top
+    2000000: View-Front
+    2000002: View-Perspective
+    2000004: View-Right
+    2000006: View-Top
+    2100000: a0000000-0000-0000-0000-000000000000
+    2300000: a03f219f-6650-4303-ade8-1f4940bc38d8
+    3300000: a03f219f-6650-4303-ade8-1f4940bc38d8
+    4300000: a03f219f-6650-4303-ade8-1f4940bc38d8
   externalObjects: {}
   materials:
     importMaterials: 1
