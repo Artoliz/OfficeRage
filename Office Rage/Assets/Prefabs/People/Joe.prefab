@@ -440,6 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 774312588}
+  Key: {fileID: 4900796168523851269, guid: bf2f6a0518caa4246ad1b2bc2d327260, type: 3}
 --- !u!195 &195926154298874292
 NavMeshAgent:
   m_ObjectHideFlags: 0

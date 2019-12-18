@@ -77,6 +77,11 @@ public class People : MonoBehaviour
         _hp -= 1;
         Health.value = _hp;
         if (_hp <= 0) {
+            if (gameObject.name == "Josh")
+            {
+                LoadSceneManager.Instance.LoadLevel("EndScene");
+                return;
+            }
             int rd = Random.Range(0, 10);
             if (rd % 2 == 0)
                 Instantiate(Key, transform.position, new Quaternion(0, 0, 0, 0));
