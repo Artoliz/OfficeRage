@@ -1,41 +1,16 @@
 fileFormatVersion: 2
-guid: 23b2fbd23231f2947ad50d2eb7f3bc2c
+guid: 15c224dc0e221c7489c2aa26d08253ce
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Boole_1_Boole_Cube
-    100002: Boole_1_Boole_Cube_1
-    100004: Boole_1_Cube_2
-    100006: Cube1
-    100008: Cube_11
-    100010: //RootNode
-    400000: Boole_1_Boole_Cube
-    400002: Boole_1_Boole_Cube_1
-    400004: Boole_1_Cube_2
-    400006: Cube1
-    400008: Cube_11
-    400010: //RootNode
-    2100000: Boole_1_Boole_CubeMat
-    2100002: Boole_1_Boole_Cube_1Mat
-    2100004: Boole_1_Cube_2Mat
-    2100006: Cube1Mat
-    2100008: Cube_11Mat
-    2300000: Boole_1_Boole_Cube
-    2300002: Boole_1_Boole_Cube_1
-    2300004: Boole_1_Cube_2
-    2300006: Cube1
-    2300008: Cube_11
-    3300000: Boole_1_Boole_Cube
-    3300002: Boole_1_Boole_Cube_1
-    3300004: Boole_1_Cube_2
-    3300006: Cube1
-    3300008: Cube_11
-    4300000: Boole_1_Boole_Cube
-    4300002: Boole_1_Boole_Cube_1
-    4300004: Boole_1_Cube_2
-    4300006: Cube1
-    4300008: Cube_11
-    2186277476908879412: ImportLogs
+    100000: //RootNode
+    100002: default
+    400000: //RootNode
+    400002: default
+    2100000: defaultMat
+    2300000: default
+    3300000: default
+    4300000: default
   externalObjects: {}
   materials:
     importMaterials: 1
