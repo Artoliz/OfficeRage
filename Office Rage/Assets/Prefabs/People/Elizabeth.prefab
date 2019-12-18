@@ -1229,10 +1229,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: People
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: f321efa6b1f25504697e98c918c60fb4, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d652e1ce3c5c33b418d13c9093e49291, type: 2}
     - target: {fileID: 400012, guid: f321efa6b1f25504697e98c918c60fb4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.2
@@ -1277,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: f321efa6b1f25504697e98c918c60fb4, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d652e1ce3c5c33b418d13c9093e49291, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f321efa6b1f25504697e98c918c60fb4, type: 3}
 --- !u!1 &2120649528553052367 stripped

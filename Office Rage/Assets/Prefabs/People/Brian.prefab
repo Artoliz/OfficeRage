@@ -1221,6 +1221,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
+      propertyPath: m_Name
+      value: Brian
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
+      propertyPath: m_TagString
+      value: People
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.817734
@@ -1264,14 +1272,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
-      propertyPath: m_Name
-      value: Brian
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
-      propertyPath: m_TagString
-      value: People
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 75cd28589a88b104eb31700e6432b909, type: 3}
       propertyPath: m_Controller
