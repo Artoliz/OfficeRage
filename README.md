@@ -14,7 +14,7 @@ Decompress the rar file at the root of the repository. It contains the .exe allo
 Double click on it and... ! Enjoy !
 
 ### Presentation
-You can see our pitch *AND* the gameplay trailer at the root of the repository.
+You can see our pitch at the root of the repository.
 
 #### Project realised by:
 - **Alexandre Sachs : [alexandre.sachs@outlook.fr](https://github.com/SachsA)**
